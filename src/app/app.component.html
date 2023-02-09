@@ -1,4 +1,5 @@
 <mat-toolbar color="primary">
+  <!--  Menu Bar -->
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon> business</mat-icon>
   </button>
@@ -6,6 +7,7 @@
   <span class="spacer">
     
   </span>
+  <!--  Add Business Button -->
   <button mat-flat-button color="warn" (click)="openDialog()">Add Business</button>
 
 </mat-toolbar>
@@ -26,39 +28,42 @@
       <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
 
-    <!-- Progress Column -->
+    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
       <td mat-cell *matCellDef="let row"> {{row.name}}% </td>
     </ng-container>
 
-    <!-- Name Column -->
+    <!-- Legal Name Column -->
     <ng-container matColumnDef="legalName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Legal Name </th>
       <td mat-cell *matCellDef="let row"> {{row.legalName}} </td>
     </ng-container>
 
-    <!-- Fruit Column -->
+    <!-- ABN Number Column -->
     <ng-container matColumnDef="abn">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> ABN Number </th>
       <td mat-cell *matCellDef="let row"> {{row.abn}} </td>
     </ng-container> 
-       <!-- Fruit Column -->
+       <!-- ACN Number Column -->
     <ng-container matColumnDef="acn">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> ACN Number </th>
       <td mat-cell *matCellDef="let row"> {{row.acn}} </td>
     </ng-container> 
-       <!-- Fruit Column -->
+       <!--  Active Column -->
     <ng-container matColumnDef="active">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Active </th>
       <td mat-cell *matCellDef="let row"> {{row.active}} </td>
     </ng-container>
+    <!--  Action Column -->
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
       <td mat-cell *matCellDef="let row"> 
+        <!--  Edit Business Button -->
         <button mat-icon-button (click)="editBusiness(row)" color="primary" >
           <mat-icon>edit</mat-icon>
         </button>
+        <!--  Delete Business Button -->
         <button mat-icon-button color="warn"(click)="deleteBusiness(row.id)">
           <mat-icon>delete</mat-icon>
         </button>
@@ -73,7 +78,7 @@
       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
     </tr>
   </table>
-
+<!--  Page Sizes -->
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 </div>
 

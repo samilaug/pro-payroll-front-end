@@ -1,32 +1,32 @@
 <h1 mat-dialog-title> Add Business </h1>
 <div mat-dialog-content>
     <form [formGroup]="businessForm">
-
+        <!-- Name Field -->
         <mat-form-field class="mat-form-field" appearance="fill">
             <mat-label>Name</mat-label>
             <input formControlName="name" matInput placeholder="Name">
         </mat-form-field>
-
+        <!-- Legal Name Field  -->
         <mat-form-field class="mat-form-field" appearance="outline">
             <mat-label>Legal Name </mat-label>
             <input formControlName="legalName" matInput placeholder="Legal Name">
         </mat-form-field>
-
+        <!-- ABN-number Field  -->
         <mat-form-field class="mat-form-field" appearance="outline">
             <mat-label>ABN-number</mat-label>
             <input formControlName="abn" matInput placeholder="ABN-number">
         </mat-form-field>
-
+        <!-- ACN-number  Field -->
         <mat-form-field class="mat-form-field" appearance="outline">
             <mat-label>ACN-number</mat-label>
             <input formControlName="acn" matInput placeholder="ACN-number">
         </mat-form-field>
-
+        <!-- Active Radio Button -->
         <mat-radio-group class="mat-form-field" formControlName="active" class="dialog-radio-group">
             <!-- <mat-radio-button value="true">Yes</mat-radio-button>
             <mat-radio-button value="false">No</mat-radio-button> -->
             <label id="dialog-radio-group-label">Active</label>
-            
+
             <mat-radio-button class="dialog-radio-button" *ngFor="let active of activeList" [value]="active">
                 {{active}}
             </mat-radio-button>
@@ -36,7 +36,10 @@
     </form>
 </div>
 <div class="mat-custom" mat-dialog-actions [align]="'end'">
+    <!-- Close Button -->
     <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addBusiness()">{{actionButton}}</button>
+    <!-- Save Button -->
+    <button style="margin-left: 8px;" mat-raised-button color="primary"
+        (click)="addBusiness()">{{actionButton}}</button>
 
 </div>
